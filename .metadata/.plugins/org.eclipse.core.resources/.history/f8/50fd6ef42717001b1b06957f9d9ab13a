@@ -1,0 +1,15 @@
+package com.example.dao;
+
+import java.util.List;
+
+import com.example.device.Device;
+
+public interface DeviceDaoInterface {
+	
+	Device getDevice(int deviceId);   
+	List<Device> getAllDevices();
+	Device addDevice(Device device);
+    int updateDevice(int id, Device device);
+	int deleteDevice(int deviceId);
+
+}

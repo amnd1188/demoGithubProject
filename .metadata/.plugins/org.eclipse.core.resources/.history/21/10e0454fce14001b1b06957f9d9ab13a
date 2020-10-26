@@ -1,0 +1,28 @@
+package com.example;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class DeviceController {
+
+	@Autowired
+	private DeviceService service;
+
+	@GetMapping("/devices")
+	public List<Device> list() {
+		return service.listAll();
+	}
+
+	@GetMapping("/devices/{id}")
+	public Device get(@PathVariable Integer id) {
+		return service.get(id);
+	}
+	
+	
+	
+}

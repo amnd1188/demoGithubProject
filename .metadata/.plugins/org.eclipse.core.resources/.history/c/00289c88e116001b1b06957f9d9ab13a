@@ -1,0 +1,21 @@
+package com.example.dao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import org.springframework.jdbc.core.RowMapper;
+
+import com.example.device.Device;
+
+public class DeviceDaoMapper implements RowMapper<Device>{
+	
+	public Device mapRow(ResultSet rs, int rowNum) throws SQLException {
+        Device device = new Device();
+        device.setId(rs.getInt("Id"));
+        device.setName(rs.getString("Device_name"));
+        device.setStatus(rs.getString("Device_status"));
+        device.setModel(rs.getString("Device_model"));
+        device.setEnrolledTime(rs.getString("Enrolled_time"));
+        return device;
+    }     
+
+}

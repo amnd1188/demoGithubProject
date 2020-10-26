@@ -1,0 +1,93 @@
+package com.example.dataAccessObj;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.device.Device;
+
+@Repository
+public class DeviceDaoImplement  implements DeviceDaoInterface{
+
+	@Autowired
+	private JdbcTemplate jdbcTemplate;
+	
+	@Override
+	@Transactional(readOnly = true) 
+	public Device getDevice(int id) {
+		final String query = "SELECT * FROM device WHERE id = ?";
+		Device device = jdbcTemplate.queryForObject(query, new Object[] {id},(rs, rowNum) ->
+			new Device(
+				rs.getInt("Id"),
+				rs.getString("Device_name"),
+				rs.getString("Device_status"),
+				rs.getString("Device_model"),
+				rs.getString("Enrolled_time")
+			));
+		return device;	
+	}
+	
+	@Override
+	@Transactional(readOnly = true)
+	public List<Device> getAllDevices() {
+		final String query = "SELECT * FROM device";
+		return jdbcTemplate.query(query, (rs, rowNum) ->
+			new Device(
+				rs.getInt("Id"),
+				rs.getString("Device_name"),
+				rs.getString("Device_status"),
+				rs.getString("Device_model"),
+				rs.getString("Enrolled_time")
+			));
+	
+	}
+	
+	
+	@Override
+	@Transactional
+    public Device addDevice(final Device device) {
+		
+        final String query = "INSERT INTO device(Device_name,Device_status,Device_model,Enrolled_time) VALUES(?,?,?)";
+        KeyHolder holder = new GeneratedKeyHolder();
+        jdbcTemplate.update(new PreparedStatementCreator() {
+			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+				PreparedStatement ps = con.prepareStatement(query, new String[] {"id"});
+				ps.setString(1, device.getDevice_name());
+	        	ps.setString(2, device.getDevice_status());
+	        	ps.setString(3, device.getDevice_model());
+	        	ps.setString(4, device.getEnrolled_time());
+	        	return ps;
+			}
+		}, holder);      
+        int generatedId = holder.getKey().intValue();
+        device.setId(generatedId);
+        return device; 
+    }
+	
+	
+	@Override
+	@Transactional
+	public int updateDevice(int id, Device device) {
+		final String query = "UPDATE device SET name=?, status=?, model=? WHERE id=?";
+		return jdbcTemplate.update(query, device.getDevice_name(), device.getDevice_status(), device.getDevice_model(), id);
+	}
+	
+	@Override
+	public int deleteDevice(int id) {
+		String query = "DELETE FROM device WHERE id = ?";
+		int relust = jdbcTemplate.update(query,id);
+		return relust;
+			
+	}
+	
+	
+}
