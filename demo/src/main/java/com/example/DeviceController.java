@@ -10,33 +10,27 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.device.Device;
-import com.example.service.DeviceService;
+import com.example.service.DService;
 
 @RestController
-public class DeviceController implements DeviceControlInterface{
+public class DeviceController implements DeviceControllerInterface{
 
 	@Autowired
-	private DeviceService deviceService;
+	private DService deviceService;
 	
-	@Override
-	@RequestMapping(value = "/device{id}", method = {RequestMethod.GET})
-	public Device getDevice(@PathVariable("id") int id) {
-		Device device = deviceService.getDevice(id);
-		return device;
-	}
-	
-	@Override
-	@RequestMapping(value = "/device", method = {RequestMethod.GET})
-	public List<Device> getAllDevices(){
-		List<Device> deviceList = deviceService.getAll();
-		return deviceList;
-	}
 	
 	@Override
 	@RequestMapping(value = "/device" , method = {RequestMethod.POST})
 	public Device addDevice(@RequestBody Device device){
 		device = deviceService.add(device);
 		return device;	
+	}
+	
+	@Override
+	@RequestMapping(value = "/device/{id}", method = {RequestMethod.GET})
+	public Device getDevice(@PathVariable("id") int id) {
+		Device device = deviceService.getDevice(id);
+		return device;
 	}
 	
 	@Override
@@ -57,6 +51,13 @@ public class DeviceController implements DeviceControlInterface{
 		} else {
 			System.out.println("Delete failed");
 		}	
+	}
+	
+	@Override
+	@RequestMapping(value = "/device", method = {RequestMethod.GET})
+	public List<Device> getAllDevices(){
+		List<Device> deviceList = deviceService.getAll();
+		return deviceList;
 	}
 	
 	

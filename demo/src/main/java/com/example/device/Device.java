@@ -55,7 +55,7 @@ public class Device {
 
 	@Override
 	public String toString() {
-		return "Device [id=" + Id + ", name=" + Device_name + ", status=" + Device_status + ", model=" + Device_model + ", enrolledTime=" + Enrolled_time + "]";
+		return "Device [id=" + Id + ", device_name=" + Device_name + ", device_status=" + Device_status + ", device_model=" + Device_model + ", enrolled_time=" + Enrolled_time + "]";
 	}
 
 	

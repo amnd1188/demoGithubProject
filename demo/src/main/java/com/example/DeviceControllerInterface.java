@@ -4,12 +4,12 @@ import java.util.List;
 
 import com.example.device.Device;
 
-public interface DeviceControlInterface {
+public interface DeviceControllerInterface {
 
-	Device getDevice(int id);
-	List<Device> getAllDevices();
 	Device addDevice( Device device);
+	Device getDevice(int id);
 	void updateDevice(int id, Device device);
 	void deleteDevice(int id);
+	List<Device> getAllDevices();
 	
 }

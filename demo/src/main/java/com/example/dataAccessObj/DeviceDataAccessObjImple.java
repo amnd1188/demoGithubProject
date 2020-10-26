@@ -1,4 +1,4 @@
-package com.example.dao;
+package com.example.dataAccessObj;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,41 +16,10 @@ import org.springframework.transaction.annotation.Transactional;
 import com.example.device.Device;
 
 @Repository
-public class DeviceDaoImplement  implements DeviceDaoInterface{
+public class DeviceDataAccessObjImple  implements DeviceDataAccessObjInterface{
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	
-	@Override
-	@Transactional(readOnly = true) 
-	public Device getDevice(int id) {
-		final String query = "SELECT * FROM device WHERE id = ?";
-		Device device = jdbcTemplate.queryForObject(query, new Object[] {id},(rs, rowNum) ->
-			new Device(
-				rs.getInt("Id"),
-				rs.getString("Device_name"),
-				rs.getString("Device_status"),
-				rs.getString("Device_model"),
-				rs.getString("Enrolled_time")
-			));
-		return device;	
-	}
-	
-	@Override
-	@Transactional(readOnly = true)
-	public List<Device> getAllDevices() {
-		final String query = "SELECT * FROM device";
-		return jdbcTemplate.query(query, (rs, rowNum) ->
-			new Device(
-				rs.getInt("Id"),
-				rs.getString("Device_name"),
-				rs.getString("Device_status"),
-				rs.getString("Device_model"),
-				rs.getString("Enrolled_time")
-			));
-	
-	}
-	
 	
 	@Override
 	@Transactional
@@ -73,6 +42,21 @@ public class DeviceDaoImplement  implements DeviceDaoInterface{
         return device; 
     }
 	
+	@Override
+	@Transactional(readOnly = true) 
+	public Device getDevice(int id) {
+		final String query = "SELECT * FROM device WHERE id = ?";
+		Device device = jdbcTemplate.queryForObject(query, new Object[] {id},(rs, rowNum) ->
+			new Device(
+				rs.getInt("Id"),
+				rs.getString("Device_name"),
+				rs.getString("Device_status"),
+				rs.getString("Device_model"),
+				rs.getString("Enrolled_time")
+			));
+		return device;	
+	}
+	
 	
 	@Override
 	@Transactional
@@ -87,6 +71,21 @@ public class DeviceDaoImplement  implements DeviceDaoInterface{
 		int relust = jdbcTemplate.update(query,id);
 		return relust;
 			
+	}
+	
+	@Override
+	@Transactional(readOnly = true)
+	public List<Device> getAllDevices() {
+		final String query = "SELECT * FROM device";
+		return jdbcTemplate.query(query, (rs, rowNum) ->
+			new Device(
+				rs.getInt("Id"),
+				rs.getString("Device_name"),
+				rs.getString("Device_status"),
+				rs.getString("Device_model"),
+				rs.getString("Enrolled_time")
+			));
+	
 	}
 	
 	

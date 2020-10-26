@@ -1,4 +1,4 @@
-package com.example.dao;
+package com.example.dataAccessObj;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -6,7 +6,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.example.device.Device;
 
-public class DeviceDaoMapper implements RowMapper<Device>{
+public class DeviceDataAccessObjMapper implements RowMapper<Device>{
 	
 	public Device mapRow(ResultSet rs, int rowNum) throws SQLException {
         Device device = new Device();
