@@ -1745,3 +1745,35 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact antlr:antlr:j
 2020-10-26 07:42:31,242 [Worker-515: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2020-10-26 07:42:31,245 [Worker-515: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-10-26 07:42:31,246 [Worker-515: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\git\demoGithubProject\demo\src\test\resources
+2020-10-26 10:03:00,173 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2020-10-26 10:21:55,062 [Worker-17: Import Getting Started Content] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.task:newTask:0.0.1-SNAPSHOT @ C:\Users\User\Documents\workspace-spring-tool-suite-4-4.8.0.RELEASE\newtask\pom.xml.
+2020-10-26 10:22:10,361 [Worker-17: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /newtask/src/main/java
+2020-10-26 10:22:10,362 [Worker-17: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /newtask/src/main/resources
+2020-10-26 10:22:10,438 [Worker-17: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /newtask/src/main/resources
+2020-10-26 10:22:10,499 [Worker-17: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /newtask/src/test/java
+2020-10-26 10:22:13,626 [Worker-17: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 48 sec
+2020-10-26 10:22:13,635 [Worker-17: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2020-10-26 10:22:18,282 [Worker-17: Import Getting Started Content] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.task:newTask:0.0.1-SNAPSHOT @ C:\Users\User\Documents\workspace-spring-tool-suite-4-4.8.0.RELEASE\newtask\pom.xml.
+2020-10-26 10:22:21,916 [Worker-17: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /newtask/src/main/java
+2020-10-26 10:22:21,917 [Worker-17: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /newtask/src/main/resources
+2020-10-26 10:22:21,928 [Worker-17: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /newtask/src/main/resources
+2020-10-26 10:22:21,940 [Worker-17: Import Getting Started Content] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /newtask/src/test/java
+2020-10-26 10:22:23,593 [Worker-17: Import Getting Started Content] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 9 sec
+2020-10-26 10:22:34,310 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-26 10:22:34,322 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-10-26 10:22:34,387 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-26 10:22:34,406 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-26 10:22:34,406 [Worker-16: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\Documents\workspace-spring-tool-suite-4-4.8.0.RELEASE\newtask\src\test\resources
+2020-10-26 10:40:20,516 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-10-26 11:07:41,215 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-10-26 11:15:39,021 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-10-26 11:16:18,948 [Worker-6: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:deviceTask:0.0.1-SNAPSHOT @ C:\Users\User\git\demoGithubProject\demo\pom.xml.
+2020-10-26 11:16:30,670 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-26 11:16:30,680 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-10-26 11:16:30,965 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-26 11:16:30,975 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-26 11:16:30,976 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\User\git\demoGithubProject\demo\src\test\resources
+2020-10-26 11:16:37,395 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-10-26 11:16:37,401 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2020-10-26 11:16:37,541 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-10-26 11:16:37,548 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
